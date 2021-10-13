@@ -14,11 +14,10 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-    for i in istighfar:
-        if message.content.startswith(i):
+    if any(word in message.content for word in istighfar):
             await message.channel.send('Astagfirullah Hanip')
-    if message.content.startswith('sabar'):
+
+    if 'sabar' in message.content:
             await message.channel.send('Astagfirullah sabar')
-    
-    
+
 client.run(hohoho)
