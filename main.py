@@ -1,6 +1,7 @@
 import os
 import discord
 import random
+from server_live import keep_alive
 
 client = discord.Client()
 hohoho = os.environ['token']
@@ -11,7 +12,7 @@ stop = True
 
 @client.event
 async def on_ready():
-    print("we have loggin as {0.user}".format(client))
+    print("{0.user} online".format(client))
 
 @client.event
 async def on_message(message):
@@ -40,5 +41,5 @@ async def on_message(message):
             persen = random.randint(0, 101)
             await message.channel.send(f'Love Calculator {name1} :heart: {name2} = {persen}%')
 
-
+keep_alive()
 client.run(hohoho)
