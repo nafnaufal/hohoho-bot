@@ -8,6 +8,8 @@ hohoho = os.environ['token']
 
 istighfar = ['Astagfirullah', 'astagfirullah', 'astaghfirullah', 'Astaghfirullah', 'istighfar', 'Istighfar']
 
+gela = ['gela', 'gila', 'geela', 'geelaa', 'gelaa', 'gella', 'gila', 'geella', 'geellaa', 'gellaa', 'gelaa']
+
 stop = True
 
 @client.event
@@ -20,18 +22,19 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if any(word in message.content for word in istighfar):
-        await message.channel.send('Astagfirullah Hanip')
+    # if any(word in message.content for word in istighfar):
+    #     await message.channel.send('Astagfirullah Hanip')
+
+    # if any(word in message.content for word in gela):
+    #     await message.channel.send('Gelaa irpan')
 
     if 'sabar' in message.content:
         await message.channel.send('Astagfirullah sabar')
-    if 'test' in message.content:
-        await message.channel.send('Kangen beb rifqi <3 <3 <3 luv luv')
     if message.content.startswith("_welcome"):
         halo = message.content.split("_welcome", 1)[1]
         await message.channel.send(f'Halo{halo} welcome o yeah welcome back :metal:')
 
-    if message.content.startswith("_lc"):
+    if message.content.startswith("\lc"):
         tipe, name1, name2 = message.content.split(",", 2)
         if "rifqi" in name1 and "rose" in name2:
             await message.channel.send(f'Love Calculator {name1} :heart: {name2} = 100%')
